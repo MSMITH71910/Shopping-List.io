@@ -15,6 +15,7 @@ function createListElement() {
     deleteButton.appendChild(document.createTextNode("Delete"));
     deleteButton.className = "delete";
     deleteButton.addEventListener("click", deleteListItem);
+    deleteButton.addEventListener("touchend", deleteListItem); // Added touch event listener
     
     li.appendChild(deleteButton);
     ul.appendChild(li);
@@ -36,6 +37,9 @@ function deleteListItem(event) {
 var deleteButtons = document.getElementsByClassName("delete");
 for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].addEventListener("click", deleteListItem);
+    deleteButtons[i].addEventListener("touchend", deleteListItem); // Added touch event listener
 }
 
 button.addEventListener("click", addListAfterClick);
+button.addEventListener("touchend", addListAfterClick); // Added touch event listener
+
